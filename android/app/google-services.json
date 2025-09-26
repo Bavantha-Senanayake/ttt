@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "129007800332",
+    "project_id": "ondemandapp-59ecf",
+    "storage_bucket": "ondemandapp-59ecf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:129007800332:android:9ef55b2327fc78b9331e29",
+        "android_client_info": {
+          "package_name": "com.ondemandapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxbAsvW8nCUHwe5u3OXl3vkwMK8Dgwhtc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
