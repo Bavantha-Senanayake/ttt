@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, SafeAreaView } from 'react-native';
 import { HomeScreen, SearchScreen, JobsScreen, ProfileScreen } from '../screens';
+import { COLORS } from '../utils/constants';
 
 type TabName = 'Home' | 'Search' | 'Jobs' | 'Profile';
 
@@ -32,28 +33,42 @@ const BottomTabNavigator: React.FC = () => {
     isActive: boolean 
   }) => (
     <TouchableOpacity
-      className={`flex-1 items-center py-2 ${isActive ? '' : ''}`}
+      className="flex-1 items-center py-3"
       onPress={() => setActiveTab(name)}
     >
-      <Text className={`text-2xl mb-1`}>{icon}</Text>
-      <Text className={`text-xs font-medium ${
-        isActive ? 'text-blue-600' : 'text-gray-500'
-      }`}>
+      <Text className="text-xl mb-1" style={{ color: isActive ? COLORS.PRIMARY : COLORS.GRAY[400] }}>
+        {icon}
+      </Text>
+      <Text 
+        className="text-xs font-medium"
+        style={{ color: isActive ? COLORS.PRIMARY : COLORS.GRAY[500] }}
+      >
         {name}
       </Text>
     </TouchableOpacity>
   );
 
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView className="flex-1" style={{ backgroundColor: COLORS.WHITE }}>
       {/* Screen Content */}
       <View className="flex-1">
         {renderScreen()}
       </View>
 
       {/* Bottom Tab Bar */}
-      <View className="bg-white border-t border-gray-200 px-2 py-2">
-        <View className="flex-row">
+      <View 
+        className="border-t px-4 py-2"
+        style={{ 
+          backgroundColor: COLORS.WHITE, 
+          borderTopColor: COLORS.GRAY[100],
+          elevation: 8,
+          shadowColor: '#000',
+          shadowOffset: { width: 0, height: -2 },
+          shadowOpacity: 0.1,
+          shadowRadius: 4,
+        }}
+      >
+        <View className="flex-row justify-between">
           <TabButton
             name="Home"
             icon="🏠"

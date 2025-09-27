@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useAppDispatch, useAppSelector } from '../utils/hooks';
 import { checkStoredAuth } from '../store/slices/authSlice';
-import { LoginScreen, AddPostScreen } from '../screens';
+import { LoginScreen, AddPostScreen, InstantFindScreen, SearchResultsScreen, CategoriesScreen, ProviderProfileScreen } from '../screens';
 import BottomTabNavigator from './BottomTabNavigator';
 import { RootStackParamList } from '../types/navigation';
 import { LoadingSpinner } from '../components';
@@ -42,12 +42,40 @@ const AppNavigator: React.FC = () => {
               }}
             />
             <Stack.Screen 
+              name="Categories" 
+              component={CategoriesScreen}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen 
               name="AddPost" 
               component={AddPostScreen}
               options={{
                 headerShown: true,
                 title: 'Create Post',
                 headerBackTitle: 'Back',
+              }}
+            />
+            <Stack.Screen 
+              name="InstantFind" 
+              component={InstantFindScreen}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen 
+              name="SearchResults" 
+              component={SearchResultsScreen}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen 
+              name="ProviderProfile" 
+              component={ProviderProfileScreen}
+              options={{
+                headerShown: false,
               }}
             />
           </>

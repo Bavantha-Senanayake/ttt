@@ -1,3 +1,17 @@
+export interface Location {
+  id: string;
+  name: string;
+  type: 'province' | 'district' | 'city';
+  parentId?: string;
+}
+
+export interface WorkerLocation {
+  province: string;
+  district: string;
+  city: string;
+  address?: string;
+}
+
 export interface Worker {
   id: string;
   name: string;
@@ -7,6 +21,7 @@ export interface Worker {
   reviewCount: number;
   hourlyRate: number;
   location: string;
+  detailedLocation: WorkerLocation;
   distance?: number;
   skills: string[];
   isAvailable: boolean;
@@ -14,6 +29,8 @@ export interface Worker {
   completedJobs: number;
   responseTime: string;
   description?: string;
+  phoneNumber?: string;
+  email?: string;
 }
 
 export interface JobCategory {

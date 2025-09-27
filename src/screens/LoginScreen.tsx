@@ -37,10 +37,7 @@ const LoginScreen: React.FC = () => {
     if (!mobile.trim()) {
       newErrors.mobile = MESSAGES.VALIDATION.MOBILE_REQUIRED;
       isValid = false;
-    } else if (!VALIDATION.MOBILE.PATTERN.test(mobile.trim())) {
-      newErrors.mobile = MESSAGES.VALIDATION.MOBILE_INVALID;
-      isValid = false;
-    }
+    } 
 
     // Password validation
     if (!password.trim()) {

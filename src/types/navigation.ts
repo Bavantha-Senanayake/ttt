@@ -3,6 +3,13 @@ export type RootStackParamList = {
   Welcome: undefined;
   AddPost: undefined;
   MainTabs: undefined;
+  InstantFind: undefined;
+  Categories: undefined;
+  ProviderProfile: { workerId: string };
+  SearchResults: {
+    searchQuery?: string;
+    category?: string;
+  };
 };
 
 export type BottomTabParamList = {
